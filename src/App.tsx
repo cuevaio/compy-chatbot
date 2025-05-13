@@ -76,7 +76,7 @@ export default function ChatPage() {
 		error,
 	} = useChat({
 		maxSteps: 3, // Allow multi-step tool calls
-		api: "http://localhost:3000/api/chat",
+		api: import.meta.env.VITE_API_URL,
 	});
 
 	// Function to handle suggestion clicks
