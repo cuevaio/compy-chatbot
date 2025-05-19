@@ -9,15 +9,15 @@ export const SuggestionsList = memo(() => {
 	return (
 		<div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4">
 			<Suggestion
-				text="Smartphones de gama media por menos de 800 soles"
-				onClick={handleSuggestionClick}
-			/>
-			<Suggestion
-				text="Televisores LG de 60 pulgadas"
+				text="Cámara Sony Alpha A7"
 				onClick={handleSuggestionClick}
 			/>
 			<Suggestion
 				text="Televisores OLED de 55 pulgadas"
+				onClick={handleSuggestionClick}
+			/>
+			<Suggestion
+				text="Google Pixel 9"
 				onClick={handleSuggestionClick}
 			/>
 			<Suggestion
