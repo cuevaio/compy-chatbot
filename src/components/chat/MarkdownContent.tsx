@@ -43,6 +43,8 @@ export const MarkdownContent = memo(({ content }: MarkdownContentProps) => {
 		tr: (props: any) => <tr className="even:bg-gray-50" {...props} />,
 		a: (props: any) => {
 			const isViewProductLink = props.href.includes("compy.pe/galeria/producto");
+			let url: URL = new URL(props.href);
+			url.searchParams.set('utm_campaign_store', 'compyai');
 			if (isViewProductLink) {
 				return (
 					<Button variant="outline" size="sm" asChild className="mt-3 w-full">
@@ -51,6 +53,7 @@ export const MarkdownContent = memo(({ content }: MarkdownContentProps) => {
 							className="flex items-center justify-center gap-2"
 							target="_blank"
 							rel="noopener noreferrer"
+							href={url}
 						>
 							{props.children}
 							<ExternalLink size={14} />
@@ -62,6 +65,7 @@ export const MarkdownContent = memo(({ content }: MarkdownContentProps) => {
 				<a
 					{...props}
 					className="text-blue-600 hover:underline focus:outline-none"
+					href={url}
 				/>
 			);
 		},
